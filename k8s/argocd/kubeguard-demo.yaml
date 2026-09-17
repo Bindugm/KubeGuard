@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: kubeguard-fixed:bash-TEMP-0841856-B18BAF-1789689020
+          image: kubeguard-fixed:bsdutils-CVE-2026-76642-1789689465
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
