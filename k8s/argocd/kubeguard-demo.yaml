@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
+          image: kubeguard-fixed:apt-CVE-2011-3374-1789681594
           ports:
             - containerPort: 80
           resources:
