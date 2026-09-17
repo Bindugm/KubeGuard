@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubeguard-policy-test
+  namespace: kubeguard-demo
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest

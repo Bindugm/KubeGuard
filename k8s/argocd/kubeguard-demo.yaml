@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeguard-demo
+  namespace: kubeguard-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubeguard-demo
+  template:
+    metadata:
+      labels:
+        app: kubeguard-demo
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeguard-demo
+  namespace: kubeguard-demo
+spec:
+  selector:
+    app: kubeguard-demo
+  ports:
+    - port: 80
+      targetPort: 80
