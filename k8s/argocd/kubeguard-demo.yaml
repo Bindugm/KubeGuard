@@ -16,6 +16,7 @@ spec:
       containers:
         - name: nginx
           image: kubeguard-fixed:apt-CVE-2011-3374-1789681594
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:
